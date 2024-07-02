@@ -5,6 +5,7 @@
 :root {
   --bg: #080808;
   --primary-color: #ff004f;
+  --secondary-color: #b54769;
   --primary-text: #eee;
   --secondary-text: #ababab;
 }
@@ -40,9 +41,37 @@ ul li {
 }
 
 .sub-title {
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 600;
   color: var(--primary-text);
+}
+
+.hover-link {
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.5s;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &.active-link {
+    &::after {
+      width: 50%;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
 }
 
 .header {
@@ -58,7 +87,7 @@ ul li {
     flex-wrap: wrap;
 
     .logo {
-      font-size: 2rem;
+      font-size: 32px;
       font-weight: 700;
 
       span {
@@ -73,24 +102,8 @@ ul li {
 
         a {
           color: var(--primary-text);
-          font-size: 1.125rem;
+          font-size: 18px;
           position: relative;
-
-          &::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            background: var(--primary-color);
-            bottom: -6px;
-            left: 50%;
-            transform: translateX(-50%);
-            transition: 0.5s;
-          }
-
-          &:hover::after {
-            width: 100%;
-          }
         }
       }
     }
@@ -107,11 +120,11 @@ ul li {
 
   .hero-text {
     margin-top: 20%;
-    font-size: 1.875rem;
+    font-size: 30px;
 
     h1 {
       margin-top: 20px;
-      font-size: 3.75rem;
+      font-size: 60px;
       line-height: 1.1em;
 
       span {
@@ -133,7 +146,40 @@ ul li {
       border-radius: 15px;
     }
   }
+
   .about-col-2 {
     flex-basis: 60%;
+  }
+
+  .tab-titles {
+    display: flex;
+    margin: 20px 0 40px;
+
+    .tab-links {
+      margin-right: 50px;
+      font-size: 18px;
+      font-weight: 500;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+
+  .tab-contents {
+    display: none;
+
+    &.active-tab {
+      display: block;
+    }
+
+    ul {
+      li {
+        margin: 10px 0;
+
+        span {
+          color: var(--secondary-color);
+          font-size: 14px;
+        }
+      }
+    }
   }
 }

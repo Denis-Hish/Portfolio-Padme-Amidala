@@ -16,11 +16,11 @@
         <nav>
           <div class="logo"><span>P</span>adme <span>A</span>midala</div>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#" class="active-link hover-link">Home</a></li>
+            <li><a href="#" class="hover-link">About</a></li>
+            <li><a href="#" class="hover-link">Services</a></li>
+            <li><a href="#" class="hover-link">Portfolio</a></li>
+            <li><a href="#" class="hover-link">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -48,10 +48,53 @@
               free time, I enjoy exploring new coding frameworks and
               contributing to open-source projects. I'm also an avid traveler, always seeking new adventures across the
               galaxy.</p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link hover-link" onclick="opentab('skills')">Skills</p>
+              <p class="tab-links hover-link" onclick="opentab('experience')">Experience</p>
+              <p class="tab-links hover-link" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>HTML</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ut rem sed
+                  similique
+                  odio quam sapiente enim, error incidunt ratione non ea velit repellat illo fugit maiores nisi. Minus,
+                  aspernatur.</li>
+                <li><span>CSS</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ut rem sed
+                  similique
+                  odio quam sapiente enim, error incidunt ratione non ea velit repellat illo fugit maiores nisi. Minus,
+                  aspernatur.</li>
+                <li><span>Java Script</span><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ut rem
+                  sed
+                  similique odio quam sapiente enim, error incidunt ratione non ea velit repellat illo fugit maiores
+                  nisi. Minus, aspernatur.</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>2020 - Current</span><br>Front-End Developer at ABC Company</li>
+                <li><span>2019 - 2020</span><br>Front-End Developer at XYZ Company</li>
+                <li><span>2017 - 2019</span><br>Front-End Developer at DEF Company</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>2016</span><br>University of Naboo</li>
+                <li><span>2015</span><br>Hightech High School</li>
+                <li><span>2014</span><br>Course of Web Development</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="sub-title">Services</h2>
+      </div>
+    </section>
+
   </main>
 
 </body>

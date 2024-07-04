@@ -83,6 +83,6 @@ form.addEventListener('submit', (e) => {
     .catch((error) => {
       console.error('Error!', error.message);
       message.textContent = 'Ошибка при отправке сообщения!';
-      message.style.color = 'red';
+      message.style.color = '#ff004f';
     });
 });

@@ -416,10 +416,16 @@ section {
         background: var(--secondary-bg);
         padding: 15px;
         margin: 15px 0;
-        color: var(--primary-text);
         font-size: 18px;
-        border-radius: 8px;
         font-family: 'Poppins', sans-serif;
+        color: var(--primary-text);
+        border-radius: 8px;
+        border: 1px solid transparent;
+        transition: var(--seconds);
+
+        &:focus {
+          border: 1px solid var(--primary-color);
+        }
       }
 
       .form-btn {

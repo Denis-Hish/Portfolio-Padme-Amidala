@@ -32,6 +32,10 @@ a {
   text-decoration: none;
 }
 
+:focus {
+  outline: none;
+}
+
 ul li {
   list-style: none;
 }
@@ -417,7 +421,7 @@ section {
         padding: 15px;
         margin: 15px 0;
         font-size: 18px;
-        font-family: 'Poppins', sans-serif;
+        font-family: inherit;
         color: var(--primary-text);
         border-radius: 8px;
         border: 1px solid transparent;
@@ -434,6 +438,27 @@ section {
         font-family: 'Poppins', sans-serif;
         margin-top: 20px;
         cursor: pointer;
+      }
+
+      .form-message {
+        height: 25px;
+        opacity: 0;
+        transition: var(--seconds);
+
+        &.sending {
+          color: var(--primary-text);
+          opacity: 1;
+        }
+
+        &.success {
+          color: #00d87a;
+          opacity: 1;
+        }
+
+        &.error {
+          color: var(--primary-color);
+          opacity: 1;
+        }
       }
     }
   }

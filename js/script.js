@@ -67,22 +67,32 @@ tabLinks.forEach((link) => {
 });
 
 // Submit messages to Google sheet
+const hideMessage = () => {
+  setTimeout(() => {
+    message.classList.remove('success', 'error', 'sending');
+  }, 5000);
+};
+
 const scriptURL =
   'https://script.google.com/macros/s/AKfycbzCyKUCewBteYA3eLeuAxPbK6zw_SBmjwKNouBni5i8Y5V3prnZGpvS1RstSW8V1peA1Q/exec';
 const form = document.forms['submit-to-google-sheet'];
-const message = document.querySelector('#form-message');
+const message = document.querySelector('.form-message');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  message.textContent = 'Your message in the process of sending ...';
+  message.classList.add('sending');
+
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then((response) => {
       console.log('Success!', response);
-      message.textContent = 'Сообщение отправлено успешно!';
-      message.style.color = 'green';
+      message.textContent = 'The message is sent successfully!';
+      message.classList.add('success');
+      hideMessage();
     })
     .catch((error) => {
       console.error('Error!', error.message);
-      message.textContent = 'Ошибка при отправке сообщения!';
-      message.style.color = '#ff004f';
+      message.textContent = 'Error when sending a message!';
+      message.classList.add('error');
     });
 });
